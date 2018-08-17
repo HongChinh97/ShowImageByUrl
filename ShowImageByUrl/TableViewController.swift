@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+       tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
 //            }
 //        }
 //    }
-    
+   
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -39,25 +39,33 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 2
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
             
+//        let urlString = "https://img00.deviantart.net/d115/i/2018/227/b/7/mystical_dream_by_ellysiumn-dck1gkt.jpg"
+//        DispatchQueue.global().async { //3
+//            let data =  NSData(contentsOf: URL(string: urlString)!)
+//            DispatchQueue.main.async { //4
+//                cell?.photoImage.image = UIImage(data: data! as Data)
+//                tableView.reloadData()
+//            }
+//        }
+        
         let urlString = "https://img00.deviantart.net/d115/i/2018/227/b/7/mystical_dream_by_ellysiumn-dck1gkt.jpg"
-        DispatchQueue.global().async { //3
-            let data =  NSData(contentsOf: URL(string: urlString)!)
-            DispatchQueue.main.async { //4
-                cell?.photoImage.image = UIImage(data: data! as Data)
-                tableView.reloadData()
+        DispatchQueue.global().async {
+//            [weak self] in
+            if let data = try? Data(contentsOf: URL(string: urlString)!) {
+                if let image =  UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell?.photoImage.image = image
+                    }
+                }
             }
         }
         return cell!
-
     }
-    
-
-    
 }
