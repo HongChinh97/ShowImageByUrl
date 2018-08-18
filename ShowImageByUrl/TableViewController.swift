@@ -9,9 +9,32 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
+    let cache = NSCache<NSString, ExpensiveObjectClass>()
+    let myObject: ExpensiveObjectClass
+    if let cachedVersion = cach.object
+   
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //Create Activity Indicator
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        
+        // Position Activity Indicator in the center of the main view
+        myActivityIndicator.center = view.center
+        
+        // If needed, you can prevent Acivity Indicator from hiding when stopAnimating() is called
+        myActivityIndicator.hidesWhenStopped = false
+        
+        // Start Activity Indicator
+        myActivityIndicator.startAnimating()
+        
+        // Call stopAnimating() when need to stop activity indicator
+//        myActivityIndicator.stopAnimating()
+        
+        
+        view.addSubview(myActivityIndicator)
 
        tableView.reloadData()
     }
@@ -45,15 +68,6 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
-            
-//        let urlString = "https://img00.deviantart.net/d115/i/2018/227/b/7/mystical_dream_by_ellysiumn-dck1gkt.jpg"
-//        DispatchQueue.global().async { //3
-//            let data =  NSData(contentsOf: URL(string: urlString)!)
-//            DispatchQueue.main.async { //4
-//                cell?.photoImage.image = UIImage(data: data! as Data)
-//                tableView.reloadData()
-//            }
-//        }
         
         let urlString = "https://img00.deviantart.net/d115/i/2018/227/b/7/mystical_dream_by_ellysiumn-dck1gkt.jpg"
         DispatchQueue.global().async {
@@ -68,4 +82,25 @@ class TableViewController: UITableViewController {
         }
         return cell!
     }
+//func displaySpinner(onView : UIView) -> UIView {
+//    let spinnerView = UIView.init(frame: onView.bounds)
+//    spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+//    let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+//    ai.startAnimating()
+//    ai.center = spinnerView.center
+//    
+//    DispatchQueue.main.async {
+//        spinnerView.addSubview(ai)
+//        onView.addSubview(spinnerView)
+//    }
+//    
+//    return spinnerView
+//}
+//
+//func removeSpinner(spinner :UIView) {
+//    DispatchQueue.main.async {
+//        spinner.removeFromSuperview()
+//    }
+//}
 }
+

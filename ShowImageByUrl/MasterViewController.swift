@@ -15,8 +15,17 @@ class MasterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         // Do any additional setup after loading the view.
+        //tao Activity Indicator
+        let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        //vi tri cua Activity
+        myActivityIndicator.center = view.center
+        //an khi stop
+        myActivityIndicator.hidesWhenStopped = false
+        
+        myActivityIndicator.startAnimating()
+        view.addSubview(myActivityIndicator)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,6 @@
 		8483270E2126661700B890A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8483270D2126661700B890A9 /* Assets.xcassets */; };
 		848327112126661700B890A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8483270F2126661700B890A9 /* LaunchScreen.storyboard */; };
 		8483271B212666F900B890A9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483271A212666F900B890A9 /* TableViewController.swift */; };
-		8483271D2126684400B890A9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483271C2126684400B890A9 /* MasterViewController.swift */; };
 		8483271F212674BF00B890A9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483271E212674BF00B890A9 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		848327102126661700B890A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848327122126661700B890A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8483271A212666F900B890A9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		8483271C2126684400B890A9 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		8483271E212674BF00B890A9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +59,6 @@
 				848327062126661500B890A9 /* AppDelegate.swift */,
 				8483271A212666F900B890A9 /* TableViewController.swift */,
 				8483271E212674BF00B890A9 /* TableViewCell.swift */,
-				8483271C2126684400B890A9 /* MasterViewController.swift */,
 				8483270A2126661500B890A9 /* Main.storyboard */,
 				8483270D2126661700B890A9 /* Assets.xcassets */,
 				8483270F2126661700B890A9 /* LaunchScreen.storyboard */,
@@ -141,7 +138,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8483271D2126684400B890A9 /* MasterViewController.swift in Sources */,
 				8483271F212674BF00B890A9 /* TableViewCell.swift in Sources */,
 				8483271B212666F900B890A9 /* TableViewController.swift in Sources */,
 				848327072126661500B890A9 /* AppDelegate.swift in Sources */,

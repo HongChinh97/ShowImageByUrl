@@ -9,7 +9,11 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+//    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+//    
+//    @IBAction func buttonStartSpinning(_ sender: UIButton) {
+//        activityIndicator.startAnimating()
+//    }
     @IBOutlet weak var photoImage: UIImageView!
     
     override func awakeFromNib() {
